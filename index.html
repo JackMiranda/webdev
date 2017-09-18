@@ -10,11 +10,10 @@ body {
   background-color: #ABCDEF;
   color: white;
   text-align: center;
-  
 }
 
 p.rad {
-  animation: blinker 0.2s linear infinite;
+  animation: blinker 0.4s linear infinite;
   font-size: 23px;
   font-weight: bold;
   font-family: sans-serif;
@@ -22,47 +21,78 @@ p.rad {
 
 }
 
+table.main {
+  background-color: #222;
+  border: 5px solid fuchsia;
+}
+
+a {
+  color: cyan;
+}
+
+a:visited {
+  color: orange;
+}
+
+a:hover {
+  color: fuchsia;
+  animation: blinker 0.2s linear infinite;
+}
+
 @keyframes blinker {  
-    50% { opacity: 0; }
+    50% { color: yellow; }
+}
+
+table.git {
+  color: white;
+  background-color: #222;
+  border: 2px solid cyan;
+  vertical-align: top;
+}
+
+tr.gitrow:nth-child(even) {
+  background-color: #444;
 }
 
     </style>
     <body>
-        <p>https://stackoverflow.com/questions/16344354/how-to-make-blinking-flashing-text-with-css-3</p>
+        <table class="main" align="center"> <tr> <td>
+        <p><a href="https://stackoverflow.com/questions/16344354/how-to-make-blinking-flashing-text-with-css-3">Blinker animation credit to stack overflow</a></p>
         <h1> Woooaahhh </h1>
         <p> Welcome to my <p class="rad">totally rad</p> website. Keep it groovy. </p>
         <img src="gerbil.gif" alt="spinning gerbil" />
         
         <h2> Git cheat sheet dog </h2>
-        <table>
-            <tr>
+        <table class="git">
+            <tr class="gitrow">
                 <th>Name</th>
                 <th>Description</th>
                 <th>Example</th>
             </tr>
-            <tr>
+            <tr class="gitrow">
                 <td>git init</td>
                 <td>Initializes a new repository</td>
                 <td><code>git init</code></td>
             </tr>
-            <tr>
+            <tr class="gitrow">
                 <td>git add <em>filename</em></td>
                 <td>Stages changes within file(s) to the repository</td>
                 <td><code>git add .</code></td>
             </tr>
-            <tr>
+            <tr class="gitrow">
                 <td>git reset</td>
                 <td>You screwed up. pls go back</td>
                 <td><code>git reset --hard</code></td>
             </tr>
-            <tr>
+            <tr class="gitrow">
                 <td>git rekt</td>
                 <td>Hit the gym</td>
                 <td><code>Bruh, let's go git rekt at the iron temple</code></td>
             </tr>
  
         </table>
-
+        </br>
         <a href="https://github.com/JackKiefer/webdev">Click Here to see the code for this achievement in computer science</a>
+        </td></td></table>
     </body>
 </html>
