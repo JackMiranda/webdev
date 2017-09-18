@@ -1,0 +1,58 @@
+body {
+  background-image: url(goat.jpg);
+  background-color: #ABCDEF;
+  color: white;
+  text-align: center;
+}
+
+p.rad {
+  animation: blinker 0.4s linear infinite;
+  font-size: 23px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: cyan;
+
+}
+
+table.main {
+  background-color: #222;
+  border: 5px solid fuchsia;
+}
+
+a {
+  color: cyan;
+}
+
+a:visited {
+  color: orange;
+}
+
+a:hover {
+  color: fuchsia;
+  animation: blinker 0.2s linear infinite;
+}
+
+@keyframes blinker {  
+    50% { color: yellow; }
+}
+
+table.git {
+  color: white;
+  background-color: #222;
+  border: 2px solid cyan;
+}
+
+td {
+  padding: 5px;
+  height: 40px;
+  vertical-align: text-top;
+}
+
+tr.gitrow:nth-child(even) {
+  background-color: #444;
+}
+
+tr.gitrow:first-of-type {
+  background-color: #abcdef;
+  color: black;
+}
