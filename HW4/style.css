@@ -92,6 +92,29 @@ aside img {
   max-width: 100%;
 }
 
+.rekt {
+  order: 1;
+}
+
+.twelve {
+  order: 0;
+}
+
+.lolwut {
+  order: 2;
+}
+
+div table {
+  width: 200px;
+  margin: auto;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
 a:hover {
   color: fuchsia;
   animation: blinker 0.2s linear infinite;
