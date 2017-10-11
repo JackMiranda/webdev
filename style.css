@@ -94,24 +94,38 @@ aside img {
 
 .rekt {
   order: 1;
+  background-image: url("sandstone.jpeg");
+  background-attachment: fixed;
+  overflow: auto;
+  height: 200px;
 }
 
 .twelve {
   order: 0;
+  background-image: url("space.jpg");
+  background-attachment: scroll;
+  overflow: auto;
+  height: 300px;
 }
 
 .lolwut {
   order: 2;
+  background-image: url("veggie.jpg");
+  background-attachment: local;
+  overflow: auto;
+  height: 350px;
 }
 
 div table {
-  width: 200px;
+  color: white;
+  flex: 1;
+  width: 300px;
   margin: auto;
 }
 
 .flex-container {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-around;
 }
 
