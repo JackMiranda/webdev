@@ -1,27 +1,76 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Testing headers</title>
-	</head>
-	<body>
-		<form action="#" method="GET">
 
-			<div>
-				<label for="my-textinput">This is the label for my very 1st text input</label>
-				<input id="my-textinput" name="text1" type="text">
-			</div>
+  <head>
+    <meta charset="utf-8">
+    <title>DOGGOLANG BLOG - CREATE AN ACCOUNT</title>
+  </head>
 
-			<div>
-				<label for="my-slider">This is the label for my 2nd text input</label>
-				<input id="my-slider" name="slider" type="range" min="0" max="100">
-			</div>
+    <body>
+      <fieldset>
+        <legend>Create an account</legend>
+        <ul>
+          <li>
+            <label for="name"> Name: </label>
+            <input type="text" id="name" name="user_name">
+          </li>
+          <li>
+            <label for="age"> Age: </label>
+            <input type="number" id="age" name="user_age">
+          </li>
+          <li>
+            <label for="email"> Email: </label>
+            <input type="email" id="email" name="user_email">
+          </li>
+          <li>
+            <label for="password"> Password: </label>
+            <input type="password" id="password" name="user_password">
+          </li>
+          <li>
+            <label for="search"> Search: </label>
+            <input type="search" id="search" name="user_search">
+          </li>
+          <li>
+            <label for="URL"> URL: </label>
+            <input type="url" id="URL" name="user_URL">
+          </li>
+          <li>
+            <label for="textarea"> TextArea: </label>
+            <textarea cols="30" rows="10" id="textare" name="user_textarea"></textarea>
+          </li>
+          <li>
+            <label for="selectbox"> SelectBox: </label>
+            <select id="selectbox" name="user_selectbox">
+              <option> Simon </option>
+              <option> Kamina </option>
+              <option> Yoko </option>
+              <option> Nia </option>
+            </select>
+          </li>
+          <li>
+            <label for="radio"> Radio buttons: </label>
+            <input type="radio" checked id="chocolate" name="cake" value="chocolate">
+            <input type="radio" id="vanilla" name="cake" value="vanilla">
+          </li>
+          <li>
+            <label for="checkbox"> Receive our hourly newsletter? </label>
+            <input type="checkbox" checked id="newsletter" name="newsletter" value="newsletter">
+          </li>
+          <li>
+            <label for="slider"> Slider: </label>
+            <input type="range" name="onions" id="onions" min="0" max="12" step="1">
+          </li>
+        </ul>
+        
+      </fieldset>
 
-			<!-- your widgets go in here -->
+	<div>
+          <button type="submit">Submit Form</button>
+          <button type="reset">Reset Form</button>
+	</div>
 
-			<div>
-				<button type="submit">Submit Form</button>
-			</div>
-		</form>
-	</body>
+     </form>
+
+  </body>
+
 </html>
