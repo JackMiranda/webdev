@@ -1,0 +1,138 @@
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: violet;
+  width: 69%;
+  margin: 0 auto;
+}
+
+
+h1, h2, h3 {
+  font-family: cursive;
+}
+
+header {
+  margin-bottom: 15px;
+  display: flex;
+  padding: 1%;
+  background-color: cyan;
+}
+
+header img {
+  display: block;
+  height: 100px;
+}
+
+h1 {
+  flex: 5;
+  font-size: 2em;
+  text-align: center;
+  text-shadow: 0px 0px 5px white;
+  color: white;
+}
+
+h2 {
+  color: navy;
+}
+
+nav {
+  height: 30px;
+  display: flex;
+  flex: 100%;
+}
+
+nav ul {
+  display: flex;
+  flex: 2;
+  list-style-type: none;
+  padding: 0;
+  margin: 3px auto;
+  background-color: cyan;
+}
+
+nav li {
+  text-align: center;
+  display: inline;
+  flex: 1;
+}
+
+nav a, nav span {
+  display: inline-block;
+  height: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+main {
+  display: flex;
+  margin: 20px auto;
+}
+
+article {
+  flex: 3;
+  padding: 20px 20px 20px 20px;
+  background-color: #FFFFF0;
+
+}
+
+aside {
+  flex: 1;
+  margin: 10px auto;
+  padding: 10px 10px 10px 10px;
+}
+
+aside img {
+  max-width: 100%;
+}
+
+.rekt {
+  order: 1;
+  background-image: url("sandstone.jpeg");
+  background-attachment: fixed;
+  overflow: auto;
+  height: 200px;
+}
+
+.twelve {
+  order: 0;
+  background-image: url("space.jpg");
+  background-attachment: scroll;
+  overflow: auto;
+  height: 300px;
+}
+
+.lolwut {
+  order: 2;
+  background-image: url("veggie.jpg");
+  background-attachment: local;
+  overflow: auto;
+  height: 350px;
+}
+
+div table {
+  color: white;
+  flex: 1;
+  width: 300px;
+  margin: auto;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+a:hover {
+  color: fuchsia;
+  animation: blinker 0.2s linear infinite;
+}
+
+@keyframes blinker {  
+    50% { color: yellow; }
+}

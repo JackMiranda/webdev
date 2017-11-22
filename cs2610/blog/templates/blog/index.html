@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>W E B &nbsp; D O G G O S</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+    </head>
+    <body>
+    <header>
+        <h1> Doggoland Blog </h1>
+        <img src="{% static 'blog/fibbonaci.jpg'%}" alt="f i b b o n a c i  b o y e" />
+    </header>
+    <nav>
+      <ul>
+        <li><span>Home</span></li>
+        <li><a href="aboot.html">Aboot doggos</a></li>
+        <li><a href="tech.html">Pupper Tech Tips</a></li>
+      </ul>
+    </nav>
+    <main>
+      <article>
+      {% if latest_blog_list %}
+      <h2> Welcome frens </h2>
+        {% for blog in latest_blog_list %}
+        <section>
+          <h3><a href="{% url 'blog:detail' blog.id %}">{{ blog.title }}</a></h3>
+          <p>
+          {{ blog.content | truncatewords:200 }}
+          </p>
+        </section>
+        {% endfor %}
+      
+      {% else %}
+      <p> No blogs! No mames!</p>
+      {% endif %}
+      
+      </article>
+      <aside>
+        <h2>Featured Good Boys</h2>
+        <a href="{% static 'blog/hipster.jpg' %}"><img src="{% static 'blog/hipster.jpg' %}" alt="Distinguished scarf doggo"></a>
+        <a href="{% static 'blog/smolfren.jpg' %}"><img src="{% static 'blog/smolfren.jpg' %}" alt="Doggo with smol fren"></a>
+      </aside>
+    </main>
+    <footer>
+    When you loaded this webpage, the time was: {{ curTime }}
+    <br/>
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Jack Kiefer
+    </footer>
+   </body>
+</html>

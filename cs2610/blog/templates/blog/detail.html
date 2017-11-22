@@ -1,0 +1,22 @@
+<h1>{{ blog.title }}</h1>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<p>{{ blog.content }}</p>
+
+<form action="{% url 'blog:comment' blog.id %}" method="post">
+{% csrf_token %}
+Name:</br>
+<input type="text" name="nickname" /><br />
+Email:</br>
+<input type="email" name="email" /><br/>
+Comment:</br>
+<textarea name="commentbody" rows="10" cols="80"></textarea>
+<br/>
+<button type="submit">Submit</button>
+</form>
+
+{% for comment in blog.comments_set.all reversed %}
+<hr>
+<b>{{comment.commenter_nickname}}</b></br></br>
+{{comment.content}}<br/></br>
+<small>{{comment.posted_date}}</small></br></br></br>
+{% endfor %}
