@@ -1,25 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>W E B &nbsp; D O G G O S - ABoot</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
     </head>
     <body>
     <header>
         <h1> Doggoland Blog </h1>
-        <img src="fibbonaci.jpg" alt="f i b b o n a c i  b o y e" />
+        <img src="{% static 'blog/fibbonaci.jpg' %}" alt="f i b b o n a c i  b o y e" />
     </header>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="{% url 'blog:index' %}">Home</a></li>
+        <li><a href="{% url 'blog:archive' %}">Archive</a></li>
         <li><span>Aboot doggos</span></li>
-        <li><a href="tech.html">Pupper Tech Tips</a></li>
+        <li><a href="{% url 'blog:tech' %}">Pupper Tech Tips</a></li>
       </ul>
     </nav>
     <main>
       <article>
       <h2> aboot doggos </h2>
-        <img src="spookyboyes.jpg" alt="s p o o k y   b o y e s" />
+        <img src="{% static 'blog/spookyboyes.jpg' %}" alt="s p o o k y   b o y e s" />
         <section>
           <h3> What is dug (doggo)? </h3>
           <p>
@@ -32,12 +34,14 @@
       </article>
       <aside>
         <h2>picturs of dug</h2>
-        <a href="ears.jpg"><img src="ears.jpg" alt="dug with sum gud ears"></a>
-        <a href="puppers.jpg"><img src="puppers.jpg" alt="smol dugs"></a>
-        <a href="aquapupper.jpg"><img src="aquapupper.jpg" alt="dug meets aquapupper"></a>
+        <a href="{% static 'blog/ears.jpg' %}"><img src="{% static 'blog/ears.jpg' %}" alt="dug with sum gud ears"></a>
+        <a href="{% static 'blog/puppers.jpg' %}"><img src="{% static 'blog/puppers.jpg' %}" alt="smol dugs"></a>
+        <a href="{% static 'blog/aquapupper.jpg' %}"><img src="{% static 'blog/aquapupper.jpg' %}" alt="dug meets aquapupper"></a>
       </aside>
     </main>
     <footer>
+    When you loaded this webpage, the time was: {{ curTime }}
+    <br/>
     <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Jack Kiefer
     </footer>
    </body>

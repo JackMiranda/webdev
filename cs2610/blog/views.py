@@ -10,6 +10,33 @@ from django.urls import reverse
 import time
 from django.utils import timezone
 
+
+def tech(request):
+    curTime = time.strftime("%c")
+    template = loader.get_template('blog/tech.html')
+    context = {
+        'curTime': curTime,
+    }
+    return HttpResponse(template.render(context,request))
+
+def aboot(request):
+    curTime = time.strftime("%c")
+    template = loader.get_template('blog/aboot.html')
+    context = {
+        'curTime': curTime,
+    }
+    return HttpResponse(template.render(context,request))
+
+def archive(request):
+    curTime = time.strftime("%c")
+    blog_list = Blog.objects.order_by('-posted_date') 
+    template = loader.get_template('blog/archive.html')
+    context = {
+        'blog_list': blog_list,
+        'curTime': curTime,
+    }
+    return HttpResponse(template.render(context,request))
+
 def index(request):
     curTime = time.strftime("%c")
     latest_blog_list = Blog.objects.order_by('-posted_date')[:3] 

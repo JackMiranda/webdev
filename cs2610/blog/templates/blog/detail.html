@@ -1,7 +1,31 @@
-<h1>{{ blog.title }}</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>W E B &nbsp; D O G G O S</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+    </head>
+    <body>
+    <header>
+        <h1> Doggoland Blog </h1>
+        <img src="{% static 'blog/fibbonaci.jpg'%}" alt="f i b b o n a c i  b o y e" />
+    </header>
+    <nav>
+      <ul>
+        <li><a href="{% url 'blog:index' %}">Home</a></li>
+        <li><a href="{% url 'blog:archive' %}">Archive</a></li>
+        <li><a href="{% url 'blog:aboot' %}">Aboot doggos</a></li>
+        <li><a href="{% url 'blog:tech' %}">Pupper Tech Tips</a></li>
+      </ul>
+    </nav>
+    <main>
+      <article>
+          
+<h2>{{ blog.title }}</h2>
+<font color="gray">By {{ blog.author_name }}, published {{ blog.posted_date }}</font>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 <p>{{ blog.content }}</p>
-
+<hr>
 <form action="{% url 'blog:comment' blog.id %}" method="post">
 {% csrf_token %}
 Name:</br>
@@ -20,3 +44,14 @@ Comment:</br>
 {{comment.content}}<br/></br>
 <small>{{comment.posted_date}}</small></br></br></br>
 {% endfor %}
+
+      
+      </article>
+    </main>
+    <footer>
+    When you loaded this webpage, the time was: {{ curTime }}
+    <br/>
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Jack Kiefer
+    </footer>
+   </body>
+</html>

@@ -12,38 +12,31 @@
     </header>
     <nav>
       <ul>
-        <li><span>Home</span></li>
-        <li><a href="{% url 'blog:archive' %}">Archive</a></li>
+        <li><a href="{% url 'blog:index' %}">Home</a></li>
+        <li><span>Archive</span></li>
         <li><a href="{% url 'blog:aboot' %}">Aboot doggos</a></li>
         <li><a href="{% url 'blog:tech' %}">Pupper Tech Tips</a></li>
       </ul>
     </nav>
     <main>
       <article>
-      {% if latest_blog_list %}
-      <h2> Welcome frens </h2>
-        {% for blog in latest_blog_list %}
+      {% if blog_list %}
+        {% for blog in blog_list%}
         <section>
           <h3><a href="{% url 'blog:detail' blog.id %}">{{ blog.title }}</a></h3>
           <font color="gray">{{ blog.comments_set.count }} comments</font>
           <p>
           {{ blog.content | truncatewords:200 }}
           </p>
-          <font color="gray">By {{ blog.author_name }}, published {{ blog.posted_date }}</font><br/>
+          <font color="gray">By {{ blog.author_name }}, published {{ blog.posted_date }}</font></br>
         </section>
         <hr>
         {% endfor %}
-      
+  
       {% else %}
       <p> No blogs! No mames!</p>
       {% endif %}
-      
       </article>
-      <aside>
-        <h2>Featured Good Boys</h2>
-        <a href="{% static 'blog/hipster.jpg' %}"><img src="{% static 'blog/hipster.jpg' %}" alt="Distinguished scarf doggo"></a>
-        <a href="{% static 'blog/smolfren.jpg' %}"><img src="{% static 'blog/smolfren.jpg' %}" alt="Doggo with smol fren"></a>
-      </aside>
     </main>
     <footer>
     When you loaded this webpage, the time was: {{ curTime }}
