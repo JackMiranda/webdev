@@ -31,6 +31,8 @@ ALLOWED_HOSTS = [u'cs2610-jackkiefer.c9users.io']
 # Application definition
 
 INSTALLED_APPS = [
+    'gold.apps.GoldConfig',
+    'goldapi.apps.GoldapiConfig',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -19,4 +19,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^blog/', include('blog.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^convertAPI/', include('goldapi.urls')),
+    url(r'^gold/', include('gold.urls')),
 ]

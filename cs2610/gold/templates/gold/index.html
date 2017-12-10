@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>YOU ARE WORTH YOUR WEIGHT IN GOLD</title>
+    </head>
+    <body>
+        <div>
+            <h2>Calculate your the worth weight in gold!</h2>
+            You are worth your weight in gold! Calculate the precise worth of your weight in gold and see that it doesn't even amount to how much you're truly worth.
+            </br>Enter your weight in lbs:<br />
+            <input type="number" id="weight" name="weight">
+            <button type="button" onclick="calculate()">Calculate</button>
+            <p id="result"></p>
+        </div>
+        <script type="text/javascript">
+            var calculate = function() {
+                var weightLbs = document.querySelector("#weight").value;
+                var unitconvURL = 'https://cs2610-jackkiefer.c9users.io/convertAPI/?from=lbs&to=t_oz&value=' + weightLbs;
+                var unitconvReq = new XMLHttpRequest();
+                unitconvReq.open('GET', unitconvURL);
+                unitconvReq.responseType = 'json';
+                unitconvReq.send();
+                
+                var ozWeight;
+                unitconvReq.onload = function() {
+                    var json = unitconvReq.response;
+                    console.log(json);
+                    ozWeight = json['value']
+                }
+                
+                var goldRUrl = 'https://www.quandl.com/api/v3/datasets/LBMA/GOLD.json?api_key=qqcRs76CozC2yYc-xutC&column_index=2&start_date=2017-10-01&end_date=2017-10-10';
+                var goldR = new XMLHttpRequest();
+                goldR.open('GET', goldRUrl);
+                goldR.responseType = 'json';
+                goldR.send();
+                goldR.onload = function() {
+                    var json = goldR.response;
+                    console.log(json);
+                    document.querySelector('#result').textContent = "Your weight in gold is worth: $" + json['dataset']['data'][0][1] * ozWeight;
+                }
+            }   
+            
+        </script>
+    </body>
+</html>

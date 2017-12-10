@@ -27,4 +27,5 @@ class Comments(models.Model):
         return self.content
         
 
+
 # Create your models here.
